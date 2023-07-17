@@ -50,3 +50,18 @@ def twoNumberSum(array, targetSum):
             return [y,x]
     return[]
             
+#######Solution with O(N) complexity 
+####The time complexity of the given code is O(n), where n is the length of the input array. This is because the code iterates through the array once to create a dictionary, and each dictionary lookup operation takes constant time on average.
+######The space complexity of the code is also O(n), where n is the length of the input array. This is because the code creates a dictionary to store the values from the array, and in the worst case scenario, the dictionary can contain all the elements of the array. Therefore, the space required is proportional to the size of the input array.
+def twoNumberSum(array, targetSum):
+    # Write your code here.
+   #create list by converting array into list
+    dic1={}
+    for x in array:
+        y= targetSum-x
+        if y in dic1:
+            return [y,x]
+        else:
+            dic1[x] =True
+    return[]
+            
