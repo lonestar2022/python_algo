@@ -64,4 +64,23 @@ def twoNumberSum(array, targetSum):
         else:
             dic1[x] =True
     return[]
-            
+######### Solution with O(nlog(n))
+#####The time complexity of the revised code is O(n log n), where n is the length of the input array. This is because the code first sorts the array using the array.sort() method, which has a time complexity of O(n log n) in the average case. After sorting the array, the code uses a while loop to iterate through the array from both ends, performing constant-time operations within the loop. Therefore, the dominant factor for the time complexity is the sorting step.
+
+#######The space complexity of the code is O(1) because it only uses a constant amount of additional space to store the variables x, y, and sum. The input array is modified in-place, so no additional space is required for that.
+def twoNumberSum(array, targetSum):
+    array.sort()
+    x=0
+    y=len(array)-1
+    while(x<y):
+            sum=array[x]+array[y]
+            if sum < targetSum:
+                #print(f' SMALL {array[x]} and {array[y]} sum is={sum} and targetSum is {targetSum}')
+                x=x+1
+            elif sum >targetSum:
+                #print(f' BIG {array[x]} and {array[y]} sum is={sum} and targetSum is {targetSum}')
+                y=y-1
+            else:
+               # print(f' EQUAL {array[x]} and {array[y]} sum is={sum} and targetSum is {targetSum}')
+               return(array[x],array[y])
+    return([])
