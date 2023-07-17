@@ -40,7 +40,7 @@ def twoNumberSum(array, targetSum):
     else:
         #here array i empty
 
-####Solution with O(N) Complexity
+####Solution with O(N ^ 2 ) Complexity but less complex, here y is being looked agaist in array across N element,  if N elements are there so it is O(N) and we are doing this N times hence another O(N)
 def twoNumberSum(array, targetSum):
     # Write your code here.
    #create list by converting array into list
