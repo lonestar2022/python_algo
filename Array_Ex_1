@@ -17,7 +17,7 @@ targetSum
 = 10								
 
 """
-
+#Solution with O(N ^ 2) complexity
 def twoNumberSum(array, targetSum):
     # Write your code here.
     sum=0
@@ -39,3 +39,14 @@ def twoNumberSum(array, targetSum):
             return[]
     else:
         #here array i empty
+
+####Solution with O(N) Complexity
+def twoNumberSum(array, targetSum):
+    # Write your code here.
+   #create list by converting array into list
+    for x in array:
+        y= targetSum-x
+        if y in array and x != y:
+            return [y,x]
+    return[]
+            
